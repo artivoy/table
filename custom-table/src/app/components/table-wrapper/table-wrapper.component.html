@@ -14,11 +14,9 @@
 
 <section class="example-section" [formGroup]="hideColumns">
     <h4>You can hide the columns:</h4>
-    <p><mat-checkbox formControlName="english">Title</mat-checkbox></p>
-    <p><mat-checkbox formControlName="status">Status</mat-checkbox></p>
-    <p><mat-checkbox formControlName="type">Type</mat-checkbox></p>
-    <p><mat-checkbox formControlName="popularity">Popularity</mat-checkbox></p>
-    <p><mat-checkbox formControlName="averageScore">Score</mat-checkbox></p>
+    <ng-container *ngFor="let column of columns">
+        <mat-checkbox [formControlName]="column.column">{{column.name}}</mat-checkbox>
+    </ng-container>
   </section>
 
 <div class="example-container mat-elevation-z8">
